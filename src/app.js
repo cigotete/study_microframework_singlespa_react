@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOMClient from 'react-dom/client';
 import Root from './Root.jsx';
-import singleSpaReact, { SingleSpaContext } from 'single-spa-react';
-import { registerApplication, start } from "single-spa";
+import singleSpaReact from 'single-spa-react';
 
- const app = singleSpaReact({
+ window.appReact = singleSpaReact({
   React,
   ReactDOMClient,
   rootComponent: Root,
@@ -13,16 +12,3 @@ import { registerApplication, start } from "single-spa";
     return <div>This renders when a catastrophic error occurs</div>;
   },
 });
-
-// Registrar la aplicación con single-spa
-registerApplication({
-  name: "app-mf-react",
-  app,
-  activeWhen: ["/"],
-  customProps: {
-    codigo: "002",
-    nombre: "Microfrontend en React"
-  }
-});
-
-start();
