@@ -3,7 +3,8 @@ import ReactDOMClient from 'react-dom/client';
 import Root from './Root.jsx';
 import singleSpaReact from 'single-spa-react';
 
- window.appReact = singleSpaReact({
+
+const app = singleSpaReact({
   React,
   ReactDOMClient,
   rootComponent: Root,
@@ -12,3 +13,5 @@ import singleSpaReact from 'single-spa-react';
     return <div>This renders when a catastrophic error occurs</div>;
   },
 });
+
+export const { bootstrap, mount, unmount } = app;
