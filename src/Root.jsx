@@ -2,6 +2,7 @@ import { BrowserRouter,Routes, Route} from "react-router-dom";
 import Panel from './components/panel';
 import Clientes from './components/clientes';
 import Busqueda from './components/busqueda';
+import "./style.css";
 
 const Root = (props) => {
   return (
