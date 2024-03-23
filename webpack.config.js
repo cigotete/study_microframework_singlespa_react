@@ -34,7 +34,7 @@ module.exports = {
       "single-spa": require.resolve("single-spa/lib/es5/esm/single-spa.min.js")
     }
   },
-  externals: ["react", "react-dom", "single-spa"],
+  externals: ["react", "react-dom", "single-spa", "appJavascript"],
   devServer: {
     historyApiFallback: true,
     port: 9002,
